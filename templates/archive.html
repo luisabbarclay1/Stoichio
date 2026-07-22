@@ -11,12 +11,19 @@
       <h1 class="mb-3">Archive</h1>
       <p class="text-muted">Past weekly posts will live here (will be added over time).</p>
 
-      <ul class="list-group mt-4">
-        <li class="list-group-item d-flex justify-content-between align-items-center">
-          <span>Week 1 – Placeholder</span>
-          <span class="text-muted small">Dec 2025</span>
-        </li>
-      </ul>
+<ul class="list-group mt-4">
+  {% for post in posts %}
+  <li class="list-group-item d-flex justify-content-between align-items-center">
+    <div>
+      <div>{{ post['title'] }}</div>
+      <small class="text-muted">{{ post['summary'] }}</small>
+    </div>
+    <span class="text-muted small">{{ post['date'] }}</span>
+  </li>
+  {% else %}
+  <li class="list-group-item text-muted">No posts yet.</li>
+  {% endfor %}
+</ul>
 
       <div class="mt-4">
         <a class="btn btn-outline-secondary" href="/recently">Back to Recently</a>
