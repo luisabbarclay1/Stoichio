@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta name ="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+        <link href="{{ url_for('static', filename='styles.css') }}" rel="stylesheet">
+        <title>Stoichio - Weekly Poisons</title>
+
+    </head>
+
+    <body>
+        <header class="py-3 border-bottom">
+  <div class="container d-flex flex-column flex-md-row align-items-md-center justify-content-between gap-3">
+    <h1 class="m-0">Stoichio.</h1>
+
+    <nav>
+      <ul class="nav">
+        <li class="nav-item"><a class="nav-link" href="{{ url_for('index') }}">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="{{ url_for('about') }}">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="{{ url_for('recently') }}">Recently</a></li>
+        <li class="nav-item"><a class="nav-link active" href="{{ url_for('what_to_avoid') }}">What to Avoid</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+        <main class="container py-5">
+  <h2 class="mb-2">What to Avoid</h2>
+  <p class="lead mb-4">
+    Everyday chemistry, explained simply. This page highlights common substances people try to reduce exposure to, plus what
+    words to look for on labels.
+  </p>
+
+  <div class="row g-4">
+
+    <!-- PFAS -->
+    <div class="col-md-4">
+      <div class="card h-100">
+        <div class="card-body">
+          <h5 class="card-title">PFAS (“Forever chemicals”) in non-stick cookware</h5>
+          <p class="card-text">
+            PFAS are a family of chemicals sometimes associated with non-stick coatings and “stain/water-resistant” treatments.
+            Many people choose to avoid them due to long persistence in the environment and ongoing health research.
+          </p>
+
+          <p class="mb-0"><strong>Look for:</strong></p>
+          <ul class="mb-3">
+            <li>“PFA-free” claims (can be helpful, but still verify)</li>
+            <li>Coating terms like PTFE / Teflon®</li>
+            <li>Older terminology: PFOA / PFOS (legacy PFAS)</li>
+          </ul>
+
+          <a class="btn btn-outline-secondary" data-bs-toggle="collapse" href="#morePFAS" role="button" aria-expanded="false" aria-controls="morePFAS">
+            More info
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Phthalates + BPA -->
+    <div class="col-md-4">
+      <div class="card h-100">
+        <div class="card-body">
+          <h5 class="card-title">Phthalates & BPA in plastics + cosmetics packaging</h5>
+          <p class="card-text">
+            Phthalates and BPA are commonly discussed because they can be found in some plastics and packaging, and may be
+            linked to hormone-related concerns in research. People often try to reduce them as a precaution.
+          </p>
+
+          <p class="mb-0"><strong>Look for:</strong></p>
+          <ul class="mb-3">
+            <li>Phthalates: DEP, DBP, DEHP, DINP, DIDP (or “phthalate”)</li>
+            <li>BPA (and sometimes BPS, BPF as “replacements”)</li>
+            <li>Plastic codes: #3 (PVC) and #7 (“other”) are commonly flagged</li>
+            <li>“Fragrance / Parfum” (can sometimes hide phthalates)</li>
+          </ul>
+
+          <a class="btn btn-outline-secondary" data-bs-toggle="collapse" href="#morePlastics" role="button" aria-expanded="false" aria-controls="morePlastics">
+            More info
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Parabens -->
+    <div class="col-md-4">
+      <div class="card h-100">
+        <div class="card-body">
+          <h5 class="card-title">Parabens in personal care products</h5>
+          <p class="card-text">
+            Parabens are preservatives used to stop bacteria and mould growth in cosmetics. Some people avoid them due to
+            hormone-related concerns, even though they’re effective preservatives and heavily debated.
+          </p>
+
+          <p class="mb-0"><strong>Look for:</strong></p>
+          <ul class="mb-3">
+            <li>Methylparaben</li>
+            <li>Ethylparaben</li>
+            <li>Propylparaben</li>
+            <li>Butylparaben</li>
+          </ul>
+
+          <a class="btn btn-outline-secondary" data-bs-toggle="collapse" href="#moreParabens" role="button" aria-expanded="false" aria-controls="moreParabens">
+            More info
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Collapsible "More info" sections -->
+  <div class="mt-4">
+
+    <div class="collapse" id="morePFAS">
+      <div class="card card-body mb-3">
+        <h5 class="mb-2">More info: PFAS & cookware</h5>
+        <ul>
+          <li><strong>What PFAS means:</strong> a large group of persistent chemicals (not just one substance).</li>
+          <li><strong>Where it shows up:</strong> non-stick coatings (often PTFE-related) and some “water/stain resistant” items.</li>
+          <li><strong>What to do (simple):</strong> if you’re trying to reduce PFAS, search labels for “PFAS-free” and avoid PTFE/Teflon® coatings.</li>
+        </ul>
+        <p class="mb-0">
+          Keywords to search: <code>PFAS</code>, <code>PTFE</code>, <code>Teflon</code>, <code>PFOA</code>, <code>PFOS</code>.
+        </p>
+      </div>
+    </div>
+
+    <div class="collapse" id="morePlastics">
+      <div class="card card-body mb-3">
+        <h5 class="mb-2">More info: Phthalates & BPA</h5>
+        <ul>
+          <li><strong>Phthalates:</strong> sometimes used in fragrances and to make plastics flexible.</li>
+          <li><strong>BPA:</strong> historically used in some plastics and resins; “BPA-free” products may use alternatives like BPS/BPF.</li>
+          <li><strong>What to do (simple):</strong> check ingredients for fragrance/parfum and common phthalate abbreviations; prefer clearly labelled packaging.</li>
+        </ul>
+        <p class="mb-0">
+          Keywords to search: <code>DEP</code>, <code>DBP</code>, <code>DEHP</code>, <code>DINP</code>, <code>BPA</code>, <code>BPS</code>, <code>BPF</code>, <code>fragrance</code>, <code>parfum</code>.
+        </p>
+      </div>
+    </div>
+
+    <div class="collapse" id="moreParabens">
+      <div class="card card-body mb-3">
+        <h5 class="mb-2">More info: Parabens</h5>
+        <ul>
+          <li><strong>Why they’re used:</strong> preservatives keep products from spoiling.</li>
+          <li><strong>Why some avoid them:</strong> debate around potential hormone-related effects; many products advertise “paraben-free”.</li>
+          <li><strong>What to do (simple):</strong> scan the ingredient list for anything ending in <code>-paraben</code>.</li>
+        </ul>
+        <p class="mb-0">
+          Keywords to search: <code>methylparaben</code>, <code>ethylparaben</code>, <code>propylparaben</code>, <code>butylparaben</code>, <code>paraben</code>.
+        </p>
+      </div>
+    </div>
+
+  </div>
+
+  <hr class="my-5">
+
+  <p class="small text-body-secondary">
+    Note: This site is educational. Research and regulations change, and “avoid” lists depend on personal preferences,
+    sensitivities, and risk tolerance.
+  </p>
+</main>
+
+<hr class="my-4">
+<h6>References</h6>
+<ol class="small">
+  <li>
+    Royal Society of Chemistry,
+    <i>What are PFAS and why are they called “forever chemicals”?</i>,
+    RSC,
+    https://www.rsc.org/news-events/articles/2023/pfas-forever-chemicals/
+    (accessed 27 December 2025).
+  </li>
+</ol>

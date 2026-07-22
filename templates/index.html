@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="{{ url_for('static', filename='styles.css') }}" rel="stylesheet">
+  <title>Stoichio</title>
+</head>
+<body>
+  {% include "_nav.html" %}
+
+  <main class="container py-5">
+    <section class="py-4">
+      <div class="row align-items-center g-4">
+        <div class="col-lg-6">
+          <h1 class="display-5 fw-bold">Chemistry, made clearer.</h1>
+          <p class="lead text-muted">
+            Stoichio is a small chemistry learning site with simple explanations, a growing “Recently” feed,
+            and a practical “What to Avoid” guide.
+          </p>
+          <div class="d-flex gap-2">
+            <a class="btn btn-primary" href="/recently">See Recently</a>
+            <a class="btn btn-outline-secondary" href="/what-to-avoid">What to Avoid</a>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <img src="{{ url_for('static', filename='images/hero.jpg') }}"
+               class="img-fluid rounded shadow-sm"
+               alt="Stoichio hero image">
+        </div>
+      </div>
+    </section>
+
+    <section class="pb-4">
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title">Recently</h5>
+              <p class="card-text text-muted">Short weekly-style posts in plain language.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title">What to Avoid</h5>
+              <p class="card-text text-muted">Ingredient/label cues and quick chemistry reasoning.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title">Simple Notes</h5>
+              <p class="card-text text-muted">Designed for quick revision and clarity.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-white">
+    <div class="container py-4 text-center">
+      © Luisa 2025
+    </div>
+  </footer>
+</body>
+</html>
