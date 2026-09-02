@@ -17,43 +17,23 @@
           <p class="text-muted mb-0">Weekly notes on chemistry discoveries in simple terms.</p>
         </div>
 
-        <!-- Single featured post -->
-        <div class="card shadow-sm">
+        <!-- Most recent posts -->
+        {% for post in posts %}
+        <div class="card shadow-sm {% if not loop.last %}mb-4{% endif %}">
           <div class="card-body p-4 p-md-5">
             <div class="d-flex flex-column flex-md-row justify-content-between gap-2 mb-3">
               <span class="badge text-bg-primary align-self-start">Research</span>
-              <small class="text-muted">Updated: Dec 2025</small>
+              <small class="text-muted">{{ post['date'] }}</small>
             </div>
-            <!--Post Title-->
             <h2 class="h3 mb-3">
-              Skin Safe Electrodes – enabling advancements for medical and wearable electronics.
+              <a class="text-decoration-none text-dark" href="{{ url_for('post', post_id=post['id']) }}">{{ post['title'] }}</a>
             </h2>
-
-            <p class="mb-3">
-              Using light allows electronics to fit to the skin naturally rather than sitting on top of it. These devices are able to measure electrical signals from the body indicating muscle activity for example.
-            </p>
-
-            <p class="mb-4">
-              This is incredibly important as traditional electrodes can be uncomfortable or even inaccurate if they are to move. Direct printing to the skin gives better contact and improves signal quality; whilst offering an avenue towards medical monitoring becoming simpler and less invasive.
-            </p>
-
-            <!-- More info dropdown -->
-            <button class="btn btn-outline-primary btn-sm" type="button"
-                    data-bs-toggle="collapse" data-bs-target="#moreInfo"
-                    aria-expanded="false" aria-controls="moreInfo">
-              More info
-            </button>
-
-            <div class="collapse mt-3" id="moreInfo">
-              <div class="border rounded p-3 bg-light">
-                <p class="mb-0">
-                  The study was conducted by researchers at Linkoping University and Lund University in Sweden. Their findings concluded that visible light can be used to form electrodes made from conductive plastics without relying on hazardous chemicals.
-                </p>
-              </div>
-            </div>
-
+            <p class="mb-0">{{ post['summary'] }}</p>
           </div>
         </div>
+        {% else %}
+        <p class="text-muted">No posts yet.</p>
+        {% endfor %}
 
         <!-- One archive button at bottom - access to old posts -->
         <div class="mt-5 text-center">

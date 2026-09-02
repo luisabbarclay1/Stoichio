@@ -9,20 +9,7 @@
         <title>Stoichio - About</title>
     </head>
     <body>
-        <header class="py-3 border-bottom">
-  <div class="container d-flex flex-column flex-md-row align-items-md-center justify-content-between gap-3">
-    <h1 class="m-0">Stoichio.</h1>
-
-    <nav>
-      <ul class="nav">
-        <li class="nav-item"><a class="nav-link" href="{{ url_for('index') }}">Home</a></li>
-        <li class="nav-item"><a class="nav-link active" href="{{ url_for('about') }}">About</a></li>
-        <li class="nav-item"><a class="nav-link" href="{{ url_for('recently') }}">Recently</a></li>
-        <li class="nav-item"><a class="nav-link" href="{{ url_for('what_to_avoid') }}">What to Avoid</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
+        {% include "_nav.html" %}
         <main class ="container py-5">
             <h2 class ="mb-3"> About Stoichio</h2>
 

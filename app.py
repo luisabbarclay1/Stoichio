@@ -5,7 +5,7 @@ Flask-based chemistry education website
 
 import sqlite3
 from datetime import date
-from flask import Flask, render_template, request, redirect
+from flask import Flask, render_template, request, redirect, abort
 
 # Create Flask application
 app = Flask(__name__)
@@ -68,4 +68,18 @@ def archive():
     conn.close()
 
     return render_template("archive.html", posts=posts)
+
+# Individual post page
+@app.route("/post/<int:post_id>")
+def post(post_id):
+    conn = get_db()
+    post = conn.execute(
+        "SELECT * FROM posts WHERE id = ?", (post_id,)
+    ).fetchone()
+    conn.close()
+
+    if post is None:
+        abort(404)
+
+    return render_template("post.html", post=post)
 
