@@ -37,13 +37,14 @@ def recently():
     if request.method == "POST":
         title = request.form.get("title", "").strip()
         summary = request.form.get("summary", "").strip()
+        body = request.form.get("body", "").strip()
         post_date = request.form.get("date", "").strip() or str(date.today())
 
         if title and summary:
             conn = get_db()
             conn.execute(
-                "INSERT INTO posts (title, summary, date) VALUES (?, ?, ?)",
-                (title, summary, post_date),
+                "INSERT INTO posts (title, summary, date, body) VALUES (?, ?, ?, ?)",
+                (title, summary, post_date, body),
             )
             conn.commit()
             conn.close()
