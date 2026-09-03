@@ -6,6 +6,7 @@ Flask-based chemistry education website
 import sqlite3
 from datetime import date
 from flask import Flask, render_template, request, redirect, abort
+import markdown
 
 # Create Flask application
 app = Flask(__name__)
@@ -82,5 +83,7 @@ def post(post_id):
     if post is None:
         abort(404)
 
-    return render_template("post.html", post=post)
+    body_html = markdown.markdown(post["body"], extensions=["tables"])
+
+    return render_template("post.html", post=post, body_html=body_html)
 

@@ -19,7 +19,7 @@
               <small class="text-muted">{{ post['date'] }}</small>
             </div>
             <h1 class="h3 mb-3">{{ post['title'] }}</h1>
-            <div class="post-body">{{ post['body'] | safe }}</div>
+            <div class="post-body">{{ body_html | safe }}</div>
           </div>
         </div>
 
