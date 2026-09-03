@@ -2,3 +2,5 @@ templates_backup/
 __pycache__/
 CLAUDE.md
 CHANGES.md
+article.md
+ADDING_A_POST.md

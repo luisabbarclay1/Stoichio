@@ -92,3 +92,8 @@ Bootstrap was used to ensure responsiveness across devices, especially tablets, 
 Conclusion:
 
 Stoichio demonstrates how Flask, SQLite, and templating can be combined to build a functional, scalable educational web application. The project emphasises clean structure, thoughtful design choices, and clear explanations over unnecessary complexity. Through this project, I gained experience in backend development, database integration, and frontend layout design, as well as a deeper understanding of how these components interact within a full-stack application.
+
+
+
+
+
