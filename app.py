@@ -3,6 +3,7 @@ Stoichio – CS50 Final Project
 Flask-based chemistry education website
 """
 
+import re
 import sqlite3
 from datetime import date
 from flask import Flask, render_template, request, redirect, abort
@@ -84,6 +85,12 @@ def post(post_id):
         abort(404)
 
     body_html = markdown.markdown(post["body"], extensions=["tables"])
+    body_html = re.sub(
+        r"(<table>.*?</table>)",
+        r'<div class="table-scroll">\1</div>',
+        body_html,
+        flags=re.DOTALL,
+    )
 
     return render_template("post.html", post=post, body_html=body_html)
 

@@ -26,10 +26,15 @@ footer {
   height: auto;
 }
 
+.post-body .table-scroll {
+  overflow-x: auto;
+  margin-bottom: 1rem;
+}
+
 .post-body table {
   width: 100%;
   border-collapse: collapse;
-  margin-bottom: 1rem;
+  margin-bottom: 0;
 }
 
 .post-body table th,
