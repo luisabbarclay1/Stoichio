@@ -25,7 +25,7 @@ A helper function, get_db(), is used to connect to the SQLite database (stoichio
 Routes defined in app.py include:
 . The homepage
 ./about
-./recently
+./recently (Displayed name changed to 'Newest')
 ./archive
 ./what-to-avoid
 

@@ -30,7 +30,7 @@ def about():
 def what_to_avoid():
     return render_template("Weeklypoisons.html")
 
-# Recently page:
+# Recently page (changed display name to Newest 2026):
 # - GET displays the most recent posts
 # - POST allows new posts to be added (future extension)
 
